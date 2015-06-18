@@ -1,0 +1,17 @@
+wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/metis-5.1.0.tar.gz
+gunzip metis-5.1.0.tar.gz
+tar -xvf metis-5.1.0.tar
+
+sudo apt-get update
+sudo apt-get install build-essential
+
+wget http://www.cmake.org/files/v2.8/cmake-2.8.3.tar.gz
+tar xzf cmake-2.8.3.tar.gz
+cd cmake-2.8.3
+./configure
+make
+sudo make install
+
+# in include/metis.h change IDXTYPEWIDTH to 64 if needeed
+make config
+sudo make install

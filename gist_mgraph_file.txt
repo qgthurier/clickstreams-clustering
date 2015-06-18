@@ -1,0 +1,8 @@
+gsutil cat gs://clickstreams-clustering/output/* > input.mgraph
+sort -t: -n -k1 input.mgraph > sorted.mgraph
+cut -d':' -f 2 sorted.mgraph > final.mgraph
+echo "100000 7880691 001" > tmp
+cat final.mgraph >> tmp
+mv tmp clickstreams.mgraph
+
+
